@@ -1,0 +1,38 @@
+# generate_ansible.py
+
+## Purpose
+Scaffolds an Ansible playbook to deploy your application:
+- Installs dependencies
+- Deploys code
+- Configures and starts services
+- Ensures idempotency
+
+## Prerequisites
+- Python 3.8+
+- `pip install ollama`
+- SSH access or dynamic inventory for target hosts
+
+## Usage
+```sh
+chmod +x generate_ansible.py
+./generate_ansible.py \
+  --model llama3.1:8b \
+  --env staging \
+  --output ansible/staging.yml
+
+---
+
+### 5. `generate_k8s.py`
+```python
+#!/usr/bin/env python3
+import ollama
+# ... (script body unchanged) ...
+
+
+Advancements which can be added 
+
+Advanced Options
+
+Split into roles and include handlers.
+
+Encrypt secrets with Ansible Vault by extending the prompt.

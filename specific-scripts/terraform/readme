@@ -1,0 +1,28 @@
+# generate_terraform.py
+
+## Purpose
+Generates a production-grade Terraform script to provision AWS infrastructure:
+- VPC, subnets, security groups
+- EC2 instances with EBS volumes
+- Remote state backend and tagging
+
+## Prerequisites
+- Python 3.8+
+- `pip install ollama`
+- AWS credentials configured (e.g. via `aws configure`)
+
+## Usage
+```sh
+chmod +x generate_terraform.py
+./generate_terraform.py \
+  --model gemini \
+  --env production \
+  --output terraform/production.tf
+
+  Advancements
+
+Customize Terraform backend (S3, Consul).
+
+Add modules and workspaces support.
+
+Inject AMI lookups via data sources in the prompt.

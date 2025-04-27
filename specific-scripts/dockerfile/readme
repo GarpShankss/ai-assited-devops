@@ -1,0 +1,37 @@
+# generate_dockerfile.py
+
+## Purpose
+This script uses an Ollama-supported LLM (e.g. llama3.1:8b, gemini) to auto-generate a best-practice Dockerfile for your chosen application language.
+
+## Prerequisites
+- Python 3.8+
+- `pip install ollama`
+- A downloaded LLM model in Ollama (e.g., `ollama pull llama3.1:8b`)
+
+## Usage
+```sh
+chmod +x generate_dockerfile.py
+./generate_dockerfile.py \
+  --model llama3.1:8b \
+  --language python \
+  --output Dockerfile
+
+  ---
+
+### 2. `generate_compose.py`
+```python
+#!/usr/bin/env python3
+import ollama
+# ... (script body unchanged) ...
+
+--model: Name of the Ollama model to use.
+
+--language: Application language (python, node, go, etc.).
+
+--output: Path to write the generated Dockerfile.
+
+Advanced Options
+
+You can customize the prompt inside the script to include multi-stage builds, healthchecks, non-root users, or extra labels.
+
+Redirect output to different directories for monorepos.

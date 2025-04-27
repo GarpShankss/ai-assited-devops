@@ -1,0 +1,35 @@
+# generate_jenkinsfile.py
+
+## Purpose
+Generates a CI/CD pipeline definition:
+- Jenkinsfile for Freestyle, Pipeline, Multibranch, or Multiconfiguration jobs
+- Or `.gitlab-ci.yml` for GitLab CI if selected
+
+## Prerequisites
+- Python 3.8+
+- `pip install ollama`
+- Jenkins or GitLab CI server configured
+
+## Usage
+```sh
+chmod +x generate_jenkinsfile.py
+# For Jenkins Freestyle job
+./generate_jenkinsfile.py \
+  --model llama3.1:8b \
+  --env staging \
+  --platform jenkins \
+  --jobtype freestyle \
+  --output Jenkinsfile
+
+# For GitLab CI
+./generate_jenkinsfile.py \
+  --model gemini \
+  --env production \
+  --platform gitlab \
+  --output .gitlab-ci.yml
+
+  Advanced Options
+
+Add Slack notifications or parallel stages by editing the prompt.
+
+Inject parameterized triggers for downstream jobs.

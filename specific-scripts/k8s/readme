@@ -1,0 +1,27 @@
+# generate_k8s.py
+
+## Purpose
+Creates Kubernetes manifests and an ArgoCD Application resource for GitOps-driven deployment.
+- Namespace, Deployment, Service
+- ConfigMap, Secrets, Ingress
+- Readiness/Liveness probes
+- ArgoCD Application YAML pointing to your Git repo
+
+## Prerequisites
+- Python 3.8+
+- `pip install ollama`
+- `kubectl` and `argocd` CLIs installed and configured
+
+## Usage
+```sh
+chmod +x generate_k8s.py
+./generate_k8s.py \
+  --model gemini \
+  --env production \
+  --output k8s/production-app.yaml
+
+  Advanced Options
+
+Swap to Helm chart scaffold by changing the prompt.
+
+Add NetworkPolicies and PodDisruptionBudget resources.

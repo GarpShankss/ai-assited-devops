@@ -1,0 +1,37 @@
+# generate_compose.py
+
+## Purpose
+Auto-generates a production-ready `docker-compose.yml` including your application service and common sidecars (DB, cache, etc.).
+
+## Prerequisites
+- Python 3.8+
+- `pip install ollama`
+- Ollama model available locally
+
+## Usage
+```sh
+chmod +x generate_compose.py
+./generate_compose.py \
+  --model llama3.1:8b \
+  --language node \
+  --env staging \
+  --output docker-compose.yml
+
+
+---
+
+### 3. `generate_terraform.py`
+```python
+#!/usr/bin/env python3
+import ollama
+# ... (script body unchanged) ...
+
+Features
+
+Defines volumes, networks, environment variables, secrets support.
+
+Best-practice restart policies and resource limits.
+
+Advanced Options
+
+Extend the prompt for profiles (dev, prod), build args, or monitoring sidecars.
